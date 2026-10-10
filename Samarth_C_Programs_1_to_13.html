@@ -1,0 +1,168 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>C Programs 1–13 | Samarth Vishwekar</title><style>
+:root{color-scheme:light dark}*{box-sizing:border-box}body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;max-width:1000px;margin:auto;padding:20px;line-height:1.5;background:#10141d;color:#eef2f7}.top{padding:22px;border:1px solid #343d4d;border-radius:16px;background:#1a2230;margin-bottom:20px}h1{margin-top:0;font-size:clamp(24px,4vw,34px)}.muted{color:#b8c3d4}.card{border:1px solid #343d4d;border-radius:14px;margin:16px 0;overflow:hidden;background:#1a2230}.head{padding:14px 16px;border-bottom:1px solid #343d4d}.head h2{font-size:18px;margin:0 0 10px}.actions{display:flex;gap:8px;flex-wrap:wrap}button,a.btn{border:0;border-radius:8px;padding:9px 12px;background:#dce8ff;color:#13223b;font-weight:650;text-decoration:none;cursor:pointer;font-size:14px}pre{margin:0;padding:16px;overflow:auto;background:#0b0e14;color:#e8edf5;font:14px/1.55 ui-monospace,SFMono-Regular,Consolas,monospace;white-space:pre}.note{padding:12px 15px;background:#222d3e;border-radius:10px;margin-top:14px}.search{width:100%;padding:12px;border:1px solid #4b566a;border-radius:9px;background:#0b0e14;color:inherit;margin-top:10px;font-size:16px}
+</style></head><body><header class="top"><h1>C Programming: Programs 1–13</h1><p class="muted">Prepared for Samarth Siddheshwar Vishwekar · Roll No. 41 · Computer Engineering</p><p>Each program is separate. Use <b>Copy code</b> or <b>Download .c</b> for an individual program.</p><input class="search" id="search" placeholder="Search program (e.g. circle, rectangle, 7)" oninput="filterPrograms()"><div class="note">To run a program, open a C compiler, copy the code into it, and press Run. HTML itself cannot execute C code directly.</div></header><section class="card" id="q1"><div class="head"><h2>Program 1: Accept a student&#x27;s name, roll number and branch, then display the details</h2><div class="actions"><button type="button" onclick="copyCode('code1',this)">Copy code</button><button type="button" onclick="downloadCode('code1','Program_1.c')">Download .c</button><a class="btn" href="https://www.onlinegdb.com/online_c_compiler" target="_blank" rel="noopener">Open C compiler</a></div></div><pre><code id="code1">/* Question 1: Accept a student&#x27;s name, roll number and branch, then display the details */
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    char name[50], branch[30];
+    int roll;
+    printf(&quot;Enter student name: &quot;);
+    scanf(&quot; %[^\n]&quot;, name);
+    printf(&quot;Enter roll number: &quot;);
+    scanf(&quot;%d&quot;, &amp;roll);
+    printf(&quot;Enter branch: &quot;);
+    scanf(&quot; %[^\n]&quot;, branch);
+    printf(&quot;\n--- Student Details ---\n&quot;);
+    printf(&quot;Name   : %s\n&quot;, name);
+    printf(&quot;Roll No: %d\n&quot;, roll);
+    printf(&quot;Branch : %s\n&quot;, branch);
+    return 0;
+}</code></pre></section><section class="card" id="q2"><div class="head"><h2>Program 2: Accept two integers and display their sum, difference, product and quotient</h2><div class="actions"><button type="button" onclick="copyCode('code2',this)">Copy code</button><button type="button" onclick="downloadCode('code2','Program_2.c')">Download .c</button><a class="btn" href="https://www.onlinegdb.com/online_c_compiler" target="_blank" rel="noopener">Open C compiler</a></div></div><pre><code id="code2">/* Question 2: Accept two integers and display their sum, difference, product and quotient */
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int a, b;
+    printf(&quot;Enter two integers: &quot;);
+    scanf(&quot;%d %d&quot;, &amp;a, &amp;b);
+    printf(&quot;Sum        = %d\n&quot;, a + b);
+    printf(&quot;Difference = %d\n&quot;, a - b);
+    printf(&quot;Product    = %d\n&quot;, a * b);
+    if (b != 0)
+        printf(&quot;Quotient   = %d\n&quot;, a / b);
+    else
+        printf(&quot;Quotient   = Cannot divide by zero\n&quot;);
+    return 0;
+}</code></pre></section><section class="card" id="q3"><div class="head"><h2>Program 3: Accept two float numbers and display their sum, difference, product and quotient</h2><div class="actions"><button type="button" onclick="copyCode('code3',this)">Copy code</button><button type="button" onclick="downloadCode('code3','Program_3.c')">Download .c</button><a class="btn" href="https://www.onlinegdb.com/online_c_compiler" target="_blank" rel="noopener">Open C compiler</a></div></div><pre><code id="code3">/* Question 3: Accept two float numbers and display their sum, difference, product and quotient */
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    float a, b;
+    printf(&quot;Enter two float numbers: &quot;);
+    scanf(&quot;%f %f&quot;, &amp;a, &amp;b);
+    printf(&quot;Sum        = %.2f\n&quot;, a + b);
+    printf(&quot;Difference = %.2f\n&quot;, a - b);
+    printf(&quot;Product    = %.2f\n&quot;, a * b);
+    if (b != 0)
+        printf(&quot;Quotient   = %.2f\n&quot;, a / b);
+    else
+        printf(&quot;Quotient   = Cannot divide by zero\n&quot;);
+    return 0;
+}</code></pre></section><section class="card" id="q4"><div class="head"><h2>Program 4: Accept the length and breadth of a rectangle and calculate its area</h2><div class="actions"><button type="button" onclick="copyCode('code4',this)">Copy code</button><button type="button" onclick="downloadCode('code4','Program_4.c')">Download .c</button><a class="btn" href="https://www.onlinegdb.com/online_c_compiler" target="_blank" rel="noopener">Open C compiler</a></div></div><pre><code id="code4">/* Question 4: Accept the length and breadth of a rectangle and calculate its area */
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    float length, breadth, area;
+    printf(&quot;Enter length and breadth: &quot;);
+    scanf(&quot;%f %f&quot;, &amp;length, &amp;breadth);
+    area = length * breadth;          /* area = l * b */
+    printf(&quot;Area of rectangle = %.2f\n&quot;, area);
+    return 0;
+}</code></pre></section><section class="card" id="q5"><div class="head"><h2>Program 5: Accept the radius of a circle and calculate its area</h2><div class="actions"><button type="button" onclick="copyCode('code5',this)">Copy code</button><button type="button" onclick="downloadCode('code5','Program_5.c')">Download .c</button><a class="btn" href="https://www.onlinegdb.com/online_c_compiler" target="_blank" rel="noopener">Open C compiler</a></div></div><pre><code id="code5">/* Question 5: Accept the radius of a circle and calculate its area */
+#include &lt;stdio.h&gt;
+#define PI 3.14159
+
+int main()
+{
+    float r, area;
+    printf(&quot;Enter radius: &quot;);
+    scanf(&quot;%f&quot;, &amp;r);
+    area = PI * r * r;                /* area = pi * r * r */
+    printf(&quot;Area of circle = %.2f\n&quot;, area);
+    return 0;
+}</code></pre></section><section class="card" id="q6"><div class="head"><h2>Program 6: Accept the side of a square and calculate its area</h2><div class="actions"><button type="button" onclick="copyCode('code6',this)">Copy code</button><button type="button" onclick="downloadCode('code6','Program_6.c')">Download .c</button><a class="btn" href="https://www.onlinegdb.com/online_c_compiler" target="_blank" rel="noopener">Open C compiler</a></div></div><pre><code id="code6">/* Question 6: Accept the side of a square and calculate its area */
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    float side, area;
+    printf(&quot;Enter side of square: &quot;);
+    scanf(&quot;%f&quot;, &amp;side);
+    area = side * side;               /* area = side * side */
+    printf(&quot;Area of square = %.2f\n&quot;, area);
+    return 0;
+}</code></pre></section><section class="card" id="q7"><div class="head"><h2>Program 7: Accept the base and height of a triangle and calculate its area</h2><div class="actions"><button type="button" onclick="copyCode('code7',this)">Copy code</button><button type="button" onclick="downloadCode('code7','Program_7.c')">Download .c</button><a class="btn" href="https://www.onlinegdb.com/online_c_compiler" target="_blank" rel="noopener">Open C compiler</a></div></div><pre><code id="code7">/* Question 7: Accept the base and height of a triangle and calculate its area */
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    float base, height, area;
+    printf(&quot;Enter base and height: &quot;);
+    scanf(&quot;%f %f&quot;, &amp;base, &amp;height);
+    area = 0.5 * base * height;       /* area = 1/2 * base * height */
+    printf(&quot;Area of triangle = %.2f\n&quot;, area);
+    return 0;
+}</code></pre></section><section class="card" id="q8"><div class="head"><h2>Program 8: Accept five subject marks and calculate the total marks and average</h2><div class="actions"><button type="button" onclick="copyCode('code8',this)">Copy code</button><button type="button" onclick="downloadCode('code8','Program_8.c')">Download .c</button><a class="btn" href="https://www.onlinegdb.com/online_c_compiler" target="_blank" rel="noopener">Open C compiler</a></div></div><pre><code id="code8">/* Question 8: Accept five subject marks and calculate the total marks and average */
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    float m1, m2, m3, m4, m5, total, average;
+    printf(&quot;Enter marks of 5 subjects: &quot;);
+    scanf(&quot;%f %f %f %f %f&quot;, &amp;m1, &amp;m2, &amp;m3, &amp;m4, &amp;m5);
+    total = m1 + m2 + m3 + m4 + m5;
+    average = total / 5;
+    printf(&quot;Total marks = %.2f\n&quot;, total);
+    printf(&quot;Average     = %.2f\n&quot;, average);
+    return 0;
+}</code></pre></section><section class="card" id="q9"><div class="head"><h2>Program 9: Accept the basic salary and calculate the annual salary</h2><div class="actions"><button type="button" onclick="copyCode('code9',this)">Copy code</button><button type="button" onclick="downloadCode('code9','Program_9.c')">Download .c</button><a class="btn" href="https://www.onlinegdb.com/online_c_compiler" target="_blank" rel="noopener">Open C compiler</a></div></div><pre><code id="code9">/* Question 9: Accept the basic salary and calculate the annual salary */
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    float basic, annual;
+    printf(&quot;Enter monthly basic salary: &quot;);
+    scanf(&quot;%f&quot;, &amp;basic);
+    annual = basic * 12;              /* 12 months in a year */
+    printf(&quot;Annual salary = %.2f\n&quot;, annual);
+    return 0;
+}</code></pre></section><section class="card" id="q10"><div class="head"><h2>Program 10: Accept the price and quantity of a product and calculate the total bill</h2><div class="actions"><button type="button" onclick="copyCode('code10',this)">Copy code</button><button type="button" onclick="downloadCode('code10','Program_10.c')">Download .c</button><a class="btn" href="https://www.onlinegdb.com/online_c_compiler" target="_blank" rel="noopener">Open C compiler</a></div></div><pre><code id="code10">/* Question 10: Accept the price and quantity of a product and calculate the total bill */
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    float price, bill;
+    int quantity;
+    printf(&quot;Enter price and quantity: &quot;);
+    scanf(&quot;%f %d&quot;, &amp;price, &amp;quantity);
+    bill = price * quantity;
+    printf(&quot;Total bill = %.2f\n&quot;, bill);
+    return 0;
+}</code></pre></section><section class="card" id="q11"><div class="head"><h2>Program 11: Accept the cost of three items and calculate the final amount</h2><div class="actions"><button type="button" onclick="copyCode('code11',this)">Copy code</button><button type="button" onclick="downloadCode('code11','Program_11.c')">Download .c</button><a class="btn" href="https://www.onlinegdb.com/online_c_compiler" target="_blank" rel="noopener">Open C compiler</a></div></div><pre><code id="code11">/* Question 11: Accept the cost of three items and calculate the final amount */
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    float c1, c2, c3, total;
+    printf(&quot;Enter cost of three items: &quot;);
+    scanf(&quot;%f %f %f&quot;, &amp;c1, &amp;c2, &amp;c3);
+    total = c1 + c2 + c3;
+    printf(&quot;Final amount = %.2f\n&quot;, total);
+    return 0;
+}</code></pre></section><section class="card" id="q12"><div class="head"><h2>Program 12: Accept the length, width and height of a box and calculate its volume</h2><div class="actions"><button type="button" onclick="copyCode('code12',this)">Copy code</button><button type="button" onclick="downloadCode('code12','Program_12.c')">Download .c</button><a class="btn" href="https://www.onlinegdb.com/online_c_compiler" target="_blank" rel="noopener">Open C compiler</a></div></div><pre><code id="code12">/* Question 12: Accept the length, width and height of a box and calculate its volume */
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    float l, w, h, volume;
+    printf(&quot;Enter length, width and height: &quot;);
+    scanf(&quot;%f %f %f&quot;, &amp;l, &amp;w, &amp;h);
+    volume = l * w * h;               /* volume = l * w * h */
+    printf(&quot;Volume of box = %.2f\n&quot;, volume);
+    return 0;
+}</code></pre></section><section class="card" id="q13"><div class="head"><h2>Program 13: Accept the radius and height of a cylinder and calculate its volume</h2><div class="actions"><button type="button" onclick="copyCode('code13',this)">Copy code</button><button type="button" onclick="downloadCode('code13','Program_13.c')">Download .c</button><a class="btn" href="https://www.onlinegdb.com/online_c_compiler" target="_blank" rel="noopener">Open C compiler</a></div></div><pre><code id="code13">/* Question 13: Accept the radius and height of a cylinder and calculate its volume */
+#include &lt;stdio.h&gt;
+#define PI 3.14159
+
+int main()
+{
+    float r, h, volume;
+    printf(&quot;Enter radius and height: &quot;);
+    scanf(&quot;%f %f&quot;, &amp;r, &amp;h);
+    volume = PI * r * r * h;          /* volume = pi * r * r * h */
+    printf(&quot;Volume of cylinder = %.2f\n&quot;, volume);
+    return 0;
+}</code></pre></section><script>function copyCode(id,btn){const t=document.getElementById(id).textContent;navigator.clipboard.writeText(t).then(()=>{const old=btn.textContent;btn.textContent='Copied!';setTimeout(()=>btn.textContent=old,1200)}).catch(()=>{const x=document.createElement('textarea');x.value=t;document.body.appendChild(x);x.select();document.execCommand('copy');x.remove();btn.textContent='Copied!'})}function downloadCode(id,name){const t=document.getElementById(id).textContent;const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([t],{type:'text/x-c'}));a.download=name;a.click();URL.revokeObjectURL(a.href)}function filterPrograms(){const q=document.getElementById('search').value.toLowerCase();document.querySelectorAll('.card').forEach(c=>c.style.display=c.textContent.toLowerCase().includes(q)?'':'none')}</script></body></html>
